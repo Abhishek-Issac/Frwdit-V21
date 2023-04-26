@@ -1,4 +1,4 @@
 TgCrypto
-pyrogram
+git+https://GitHub.com/subinps/pyrogram@inline-m
 Dnspython
 pyromod
