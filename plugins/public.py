@@ -23,21 +23,21 @@ async def run(bot, message):
     global LIMIT
     if str(message.from_user.id) not in Config.OWNER_ID:
         return
-    fromid = await bot.ask(message.chat.id, Translation.FROM_MSG)
+    fromid = await Client.send_message(message.chat.id, Translation.FROM_MSG)
     if fromid.text.startswith('/'):
         await message.reply(Translation.CANCEL)
         return
     elif not fromid.text.startswith('@'):
         return await message.reply(Translation.USERNAME)
-    toid = await bot.ask(message.chat.id, Translation.TO_MSG)
+    toid = await bot.send_message(message.chat.id, Translation.TO_MSG)
     if toid.text.startswith('/'):
         await message.reply(Translation.CANCEL)
         return
-    skipno = await bot.ask(message.chat.id, Translation.SKIP_MSG)
+    skipno = await bot.send_message(message.chat.id, Translation.SKIP_MSG)
     if skipno.text.startswith('/'):
         await message.reply(Translation.CANCEL)
         return
-    limitno = await bot.ask(message.chat.id, Translation.LIMIT_MSG)
+    limitno = await bot.send_message(message.chat.id, Translation.LIMIT_MSG)
     if limitno.text.startswith('/'):
         await message.reply(Translation.CANCEL)
         return
