@@ -23,7 +23,7 @@ async def run(bot, message):
     global LIMIT
     if str(message.from_user.id) not in Config.OWNER_ID:
         return
-    fromid = await Client.send_message(message.chat.id, Translation.FROM_MSG)
+    fromid = await bot.send_message(message.chat.id, Translation.FROM_MSG)
     if fromid.text.startswith('/'):
         await message.reply(Translation.CANCEL)
         return
