@@ -50,9 +50,9 @@ async def run(bot, message):
         text=Translation.DOUBLE_CHECK.format(fromid.text),
         reply_markup=reply_markup
     )
-    SKIP = skipno.text
-    FROM = fromid.text
-    TO = toid.text
+    SKIP = Config.SKIP_NO
+    FROM = Config.FROM_CHANNEL
+    TO = Config.TO_CHANNEL
     LIMIT = limitno.text
     if re.match('-100\d+', TO):
         TO = int(TO)
